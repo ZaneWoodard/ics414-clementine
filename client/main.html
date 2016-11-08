@@ -3,14 +3,16 @@
 </head>
 
 <body>
-  <h1>ICS414 Team Clementine - PomoKanban</h1>
-  <h2>Timer</h2>
- {{> timer}}   
+  <div class="container">
+    <h1>ICS414 Team Clementine - PomoKanban</h1>
+    <h2>Timer</h2>
+    {{> timer}}
+  </div>
 </body>
 
 <template name="timer">
     <p> {{timer}} </p>
-    <button id="start">Start</button>
-    <button id="pause">Pause</button>
-    <button id="reset">Reset</button>
+    <button id="start" class="btn btn-primary">Start</button>
+    <button id="pause" class="btn btn-primary">Pause</button>
+    <button id="reset" class="btn btn-primary">Reset</button>
 </template>
