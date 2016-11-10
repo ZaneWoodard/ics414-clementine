@@ -4,6 +4,7 @@ import { Session } from 'meteor/session';
 
 import './main.html';
 
+var SPEEDUP = 1;
 
 Template.timer.onCreated(function timerOnCreated() {
   this.pomodoroState = "paused";
@@ -28,8 +29,13 @@ Template.timer.events({
     if(instance.pomodoroState=="paused") {
       instance.pomodoroState = "running";
       instance.timerIntervalId = Meteor.setInterval(function () {
-        Session.set("seconds_left", Session.get("seconds_left")-1);
-      }, 1000);
+        var secondsLeft = Session.get("seconds_left");
+        if(secondsLeft <= 0 ) {
+          Meteor.clearInterval(instance.timerIntervalId);
+        } else {
+          Session.set("seconds_left", Session.get("seconds_left") - 1);
+        }
+      }, 1000 / SPEEDUP);
     }
   },
   'click button#pause'(event, instance) {
