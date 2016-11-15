@@ -3,6 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { Session } from 'meteor/session';
 
 import './main.html';
+import '../imports/ui/body.js'; //imports body.js from imports folder
 
 
 Template.timer.onCreated(function timerOnCreated() {
@@ -10,6 +11,8 @@ Template.timer.onCreated(function timerOnCreated() {
   this.timerIntervalId = 0;
   Session.set("seconds_left", 25*60);
 });
+
+
 
 Template.timer.helpers({
   timer() {
@@ -46,4 +49,4 @@ Template.timer.events({
     Session.set("seconds_left", 25*60);
   }
 });
-
+    
