@@ -1,15 +1,18 @@
 <template name="todo">
     <header>
-      <h1>Todo List</h1>
+        <h1>Todo List</h1>
 
-      <form class="new-task">
-        <input type="text" name="text" placeholder="Type to add new tasks" />
-      </form>
+        <form class="new-task">
+                <div class="form-inline">
+                    <input type="text" name="text" class="form-control" placeholder="Type to add new tasks"/>
+                    <button type="submit" class="btn btn-primary">Add Task</button>
+                </div>
+        </form>
     </header>
-	
+
     <ul>
-      {{#each tasks}}
-        {{> task}}
-      {{/each}}
+        {{#each tasks}}
+            {{> task}}
+        {{/each}}
     </ul>
 </template>
