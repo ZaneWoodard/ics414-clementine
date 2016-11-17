@@ -1,37 +1,24 @@
 body {
 
   font-family: sans-serif;
-  background-color: #d2edf4;
-  background-image: linear-gradient(to bottom, #d2edf4, #918e82 100%); 
   background-attachment: fixed;
 
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0; 
+  right: 0;
 
   padding: 0;
-  margin: 0; 
+  margin: 0;
 
   font-size: 14px;
-} 
-
-.container {
-
-  max-width: 600px
-  margin: 0 auto;
-  min-height: 100%;
-  background: white;
 }
 
 header {
-
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
   padding: 20px 15px 15px 15px;
   position: relative;
-  
+
 }
 
 #login-buttons {
@@ -54,7 +41,7 @@ form {
   margin-bottom: -10px;
   position: relative;
 }
- 
+
 .new-task input {
 
   box-sizing: border-box;
@@ -142,7 +129,7 @@ header .hide-completed {
     clear: both;
   }
 
- 
+
   .new-task input {
 
     padding-bottom: 5px;

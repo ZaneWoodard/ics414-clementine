@@ -4,16 +4,16 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { Tasks } from '../api/tasks.js';
 
 import './task.js';
-import './body.html';
+import './todo.html';
 
-Template.body.helpers({
+Template.todo.helpers({
   tasks() {
     // Show newest tasks at the top
     return Tasks.find({}, { sort: { createdAt: -1 } });
   },
 });
 
-Template.body.events({
+Template.todo.events({
   'submit .new-task'(event) {
     // Prevent default browser form submit
     event.preventDefault();

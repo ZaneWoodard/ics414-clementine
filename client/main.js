@@ -3,7 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import { Session } from 'meteor/session';
 
 import './main.html';
-import '../imports/ui/body.js'; //imports body.js from imports folder
+import '../imports/ui/todo.js'; //imports todo.js from imports folder
 
 var SPEEDUP = 1;
 
