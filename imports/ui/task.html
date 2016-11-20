@@ -1,20 +1,36 @@
 <template name="task">
-    <li class="{{#if checked}}checked{{/if}}">
-        <div class="">
-            <button class="btn btn-xs btn-danger task-button delete">&times;</button>
-            {{#if checked}}
-                <button class="btn btn-xs btn-warning task-button toggle-checked">Reopen</button>
-            {{else}}
-                <button class="btn btn-xs btn-success task-button toggle-checked">Done</button>
-            {{/if}}
-            <div class="text">
-                <h4>
-                    {{title}}
-                    <small class="more {{#if showMore}}show{{else}}hidden{{/if}}">{{description}}</small>
-                </h4>
 
-            </div>
-        </div>
-    </li>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail" id="main-card">
+		<div class="caption" id="main-card">
+			<li class="{{#if checked}}checked{{/if}}" id="card-list">
+				<div class="">
+					<button class="btn btn-xs btn-danger task-button delete">&times;</button>
+						{{#if checked}}
+					<button class="btn btn-xs btn-warning task-button toggle-checked">Reopen</button>
+						{{else}}
+					<button class="btn btn-xs btn-success task-button toggle-checked">Done</button>
+						{{/if}}
+					<div class="text" id="card-title">
+						<h3>  {{title}} </h3>
+					</div>
+					<br>
+					<div class="text">
+						<h4>
+							<small class="more {{#if showMore}}show{{else}}hidden{{/if}}">{{description}}</small>
+						</h4>
+					</div>
+				</div>
+			</li>
+			
+		</div>
+    </div>
+  </div>
+</div>
+	
+	
+	
+	
 </template>
 
