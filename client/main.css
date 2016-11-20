@@ -35,12 +35,6 @@ h1 {
   margin-right: 1em;
 }
 
-.new-task input {
-  box-sizing: border-box;
-  padding: 10px 0;
-  padding-right: 80px;
-}
-
 ul {
 
   margin: 0;
@@ -48,14 +42,9 @@ ul {
   background: white;
 }
 
-.delete {
-
+.task-button {
   float: right;
-  font-weight: bold;
-  background: none;
-  font-size: 1em;
-  border: none;
-  position: relative;
+  margin-right: 4px;
 }
 
 li {
@@ -90,6 +79,10 @@ li.private {
 header .hide-completed {
 
   float: right;
+}
+
+small.more {
+  word-break: break-all;
 }
 
 .toggle-private {

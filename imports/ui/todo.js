@@ -18,18 +18,24 @@ Template.todo.events({
     // Prevent default browser form submit
     event.preventDefault();
 
+    console.log(event);
+
     // Get value from form element
     const target = event.target;
-    const text = target.text.value;
+
+    const title = target.title.value;
+    const description = target.description.value;
 
     // Insert a task into the collection
     Tasks.insert({
-      text,
+      title,
+      description,
       createdAt: new Date(), // current time
     });
 
     // Clear form
-    target.text.value = '';
+    target.title.value = '';
+    target.description.value = '';
   },
 });
 
