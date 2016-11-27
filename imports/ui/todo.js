@@ -5,6 +5,7 @@ import { Tasks } from '../api/tasks.js';
 
 import './task.js';
 import './todo.html';
+import './timer.js'
 
 Template.todo.helpers({
   tasks() {

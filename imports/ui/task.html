@@ -1,36 +1,34 @@
 <template name="task">
-
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail" id="main-card">
-		<div class="caption" id="main-card">
-			<li class="{{#if checked}}checked{{/if}}" id="card-list">
-				<div class="">
-					<button class="btn btn-xs btn-danger task-button delete">&times;</button>
-						{{#if checked}}
-					<button class="btn btn-xs btn-warning task-button toggle-checked">Reopen</button>
-						{{else}}
-					<button class="btn btn-xs btn-success task-button toggle-checked">Done</button>
-						{{/if}}
-					<div class="text" id="card-title">
-						<h3>  {{title}} </h3>
-					</div>
-					<br>
-					<div class="text">
-						<h4>
-							<small class="more {{#if showMore}}show{{else}}hidden{{/if}}">{{description}}</small>
-						</h4>
-					</div>
-				</div>
-			</li>
-			
-		</div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail" id="main-card">
+                <div class="caption" id="main-card">
+                    <li class="{{#if checked}}checked{{/if}}" id="card-list">
+                        <div class="card">
+                            <div class="card-block">
+                                <button class="btn btn-xs btn-danger task-button delete">&times;</button>
+                                {{#if checked}}
+                                    <button class="btn btn-xs btn-warning task-button toggle-checked">Reopen</button>
+                                {{else}}
+                                    <button class="btn btn-xs btn-success task-button toggle-checked">Done</button>
+                                {{/if}}
+                                <h3 class="text card-title">  {{title}} </h3>
+                            </div>
+                            {{#if showMore}}
+                                <div class="card-block">
+                                    {{> timer}}
+                                </div>
+                                <div class="card-block">
+                                    <p class="card-text more"> {{description}}</p>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-	
-	
-	
-	
+
+
 </template>
 

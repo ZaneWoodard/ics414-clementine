@@ -18,7 +18,7 @@ Template.task.events({
     'click .delete'() {
         Tasks.remove(this._id);
     },
-    'click li'() {
+    'click .card-title'() {
         var show = Template.instance().showDescription;
         show.set(!show.get());
     }
