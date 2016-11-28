@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session';
 import { ReactiveVar } from 'meteor/reactive-var';
+import {Tasks} from '../api/tasks.js';
 
 import './timer.html'
 
@@ -22,7 +23,7 @@ Template.timer.helpers({
         var paddedSeconds = seconds < 10 ? "0" + seconds : seconds;
         var paddedMinutes = minutes < 10 ? "0" + minutes : minutes;
         return paddedMinutes + ":" + paddedSeconds;
-    },
+    }
 });
 
 Template.timer.events({
@@ -30,11 +31,20 @@ Template.timer.events({
         console.log("Starting");
         if(instance.pomodoroState=="paused") {
             instance.pomodoroState = "running";
+            var self = this;
             instance.timerIntervalId = Meteor.setInterval(function () {
                 if(instance.seconds_left.curValue <= 0 ) {
                     Meteor.clearInterval(instance.timerIntervalId);
+
+                    var cycleCount = Session.get(instance.data.parentID);
+                    Session.set(instance.data.parentID, cycleCount+1);
+
+                    Tasks.update(instance.data.parentID, {
+                        $set: {cycles: cycleCount+1 },
+                    });
                 } else {
                     instance.seconds_left.set(instance.seconds_left.get()-1);
+
                 }
             }, 1000 / SPEEDUP);
         }

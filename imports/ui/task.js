@@ -6,6 +6,7 @@ import './task.html';
 
 Template.task.onCreated(function timerOnCreated() {
     this.showDescription = new ReactiveVar(false);
+    Session.set(this.data._id, this.data.cycles);
 });
 
 Template.task.events({
@@ -25,6 +26,10 @@ Template.task.events({
 });
 
 Template.task.helpers({
+    cycleCount : function() {
+
+        return Session.get(Template.instance().data._id);
+    },
     showMore: function(){
         return Template.instance().showDescription.get();
     }

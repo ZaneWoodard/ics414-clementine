@@ -31,6 +31,7 @@ Template.todo.events({
     Tasks.insert({
       title,
       description,
+      cycles: 0,
       createdAt: new Date(), // current time
     });
 
