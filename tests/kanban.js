@@ -1,7 +1,3 @@
-/* eslint-env mocha */
-// These are Chimp globals */
-/* globals browser assert */
-
 const countCards = () => {
     if(browser.isExisting('.card')) {
         browser.waitForVisible('.card', 5000);
