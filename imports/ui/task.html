@@ -8,9 +8,9 @@
                             <div class="card-block">
                                 <button class="btn btn-xs btn-danger task-button delete">&times;</button>
                                 {{#if checked}}
-                                    <button class="btn btn-xs btn-warning task-button toggle-checked">Reopen</button>
+                                    <button class="btn btn-xs btn-warning task-button toggle-checked reopen">Reopen</button>
                                 {{else}}
-                                    <button class="btn btn-xs btn-success task-button toggle-checked">Done</button>
+                                    <button class="btn btn-xs btn-success task-button toggle-checked done">Done</button>
                                 {{/if}}
                                 <h3 class="text card-title">  {{title}} </h3>
                                 <p class="text card-subtitle">Current Cycles: {{ cycleCount }}</p>
