@@ -29,7 +29,7 @@ Template.timer.helpers({
 Template.timer.events({
     'click button#start'(event, instance) {
         console.log("Starting");
-        if(instance.pomodoroState=="paused") {
+        if(instance.pomodoroState=="paused" && instance.seconds_left.get()>0) {
             instance.pomodoroState = "running";
             var self = this;
             instance.timerIntervalId = Meteor.setInterval(function () {
